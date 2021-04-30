@@ -3,11 +3,14 @@
 #Salidas: Retornara los numeros mayores y menores de la lista
 #Restricciones: Solo puede ingresar una lista 
 def extremosLista(lista):
-    if lista == []:
-        print ("No puede ingresar una lista vacia")
-        return print ("ERROR")
+    if isinstance(lista,list):
+        if lista == []:
+            print ("No puede ingresar una lista vacia")
+            return print ("ERROR")
+        else:
+            return extremosLista_aux(numeroMayor(lista),numeroMenor(lista))
     else:
-        return extremosLista_aux(numeroMayor(lista),numeroMenor(lista))
+        print("Error: Debe ingresar una lista")
     
 def extremosLista_aux(lista, nuevaLista):
     if lista == nuevaLista:
